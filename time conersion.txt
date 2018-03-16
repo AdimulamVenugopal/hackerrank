@@ -1,0 +1,40 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+      public static void main(String[] args){
+          
+         Scanner sc= new Scanner(System.in);
+         String s = sc.next();
+         String time[] = s.split(":");
+         String hrs = time[0];
+         String min = time[1];
+         String sec = time[2].substring(0,2);
+         String dayeve = time[2].substring(2,4);
+        
+         if(dayeve.contains("AM"))
+         {
+             if(hrs.contains("12"))
+             {
+                 hrs="00";
+                
+             }
+             System.out.println(hrs+":"+min+":"+sec);
+          } 
+          else
+             {
+                 if(!hrs.contains("12"))
+                 {
+                  int h = Integer.parseInt(hrs);
+                  h = h + 12;
+                  hrs = "" + h;
+                 }
+                  System.out.println(hrs+":"+min+":"+sec);   
+                     
+                 }
+             }
+         }
